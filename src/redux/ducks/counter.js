@@ -1,27 +1,25 @@
-const INCREMENT = 'increment'
-const DECREMENT = 'decrement'
+const INCREMENT = "increment";
+const DECREMENT = "decrement";
 
 export const increment = () => ({
-  type: INCREMENT,
-})
+  type: INCREMENT
+});
 
 export const decrement = () => ({
-  type: DECREMENT,
-})
+  type: DECREMENT
+});
 
 const initialState = {
-  count: 0,
-}
+  count: 0
+};
 
-const reducer = (state = initialState, action) => {
+export default (state = initialState, action) => {
   switch (action.type) {
     case INCREMENT:
-      return { ...state, count: state.count +1 }
+      return { ...state, count: state.count + 1 };
     case DECREMENT:
-      return { ...state, count: state.count -1 }
+      return { ...state, count: state.count - 1 };
     default:
-      return state
+      return state;
   }
-}
-
-export default reducer
+};
